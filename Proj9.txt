@@ -1,0 +1,76 @@
+# Author:Ashley Johnson
+# Date: 11/23/2020
+# Description: Program allows two players to play a game where they alternately choose a number 1-9 that has not
+# already been selected by another player. Player wins when the sume of 3 of the numbers equals 15.
+# If all numbers 1-9 are chosen, then nobody wins.
+class AddThreeGame:
+    """class has 3 private members that keeps track of what numbers have been chosen and by
+    whom, the current state of the game, and to keep track of whose turn it is."""
+
+    def __init__(self):
+        """initializes data members of class"""
+
+        self.__p1 = []
+        self.__p2 = []
+        self.__played = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        self.__player_turn = 'first'
+        self.__curstat = "UNFINISHED"
+
+    def make_move(self, pl, x):
+        """function takes two parameters- a string telling player to make a move, either "first or second" and an
+        integer giving their number choice. Function returns false if it is not that player's turn,
+         or if the integer is not in the correct range, or if that integer has already been chosen,
+         or if the game has already been won or drawn. Otherwise, function updates the current state
+         and returns true."""
+
+        if x not in self.__played:
+            return False
+
+        elif self.__player_turn != pl:
+            return False
+
+        elif self.__curstat == "FIRST_WON"  or self.__curstat == "SECOND_WON" or self.__curstat == "DRAW":
+            return False
+
+        if pl == "first":
+            self.__p1.append(x)
+            self.__played.remove(x)
+            self.__player_turn = 'second'
+            return True
+
+        elif pl == "second":
+            self.__p2.append(x)
+            self.__played.remove(x)
+            self.__player_turn = 'first'
+            return True
+
+    def get_current_state(self):
+        """function returns the current state of the game."""
+        if len(self.__p1) >= 3:
+            for i in range(len(self.__p1) - 2):
+                for j in range(i + 1, len(self.__p1) - 1):
+                    for k in range(j + 1, len(self.__p1)):
+                        if ((self.__p1[i] + self.__p1[j] + self.__p1[k]) == 15):
+                            self.__curstat = 'FIRST_WON'
+                            return self.__curstat
+
+        if len(self.__p2) >= 3:
+            for i in range(len(self.__p2) - 2):
+                for j in range(i + 1, len(self.__p2) - 1):
+                    for k in range(j + 1, len(self.__p2)):
+                        if ((self.__p2[i] + self.__p2[j] + self.__p2[k]) == 15):
+                            self.curstat = 'SECOND_WON'
+                            return self.__curstat
+
+        if self.__played == []:
+            self.curstat = 'DRAW'
+        else:
+            self.curstat = 'UNFINISHED'
+
+        return self.__curstat
+
+
+game = AddThreeGame()
+state = game.get_current_state()
+
+
