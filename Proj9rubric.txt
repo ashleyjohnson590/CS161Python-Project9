@@ -1,0 +1,147 @@
+Assignment 9 Rubric (1)
+Criteria	Ratings	Pts
+Code Style Deduction: Used single letter variable names. Known math symbols are okay. (-2 Points)
+0 pts
+Full Marks
+Meets style guidelines
+0 pts
+Point Deduction
+0 / 0 pts
+Code Style Deduction: Did not format code correctly. (Colons, indentation, at least 1 blank line after function/methods/classes, name conventions such as snake_case. Overall.) (-2 Points)
+0 pts
+Full Marks
+Meets style guidelines
+0 pts
+Point Deduction
+0 / 0 pts
+Code Style Deduction: Each wrong file/function/class name. (-1 Point each)
+0 pts
+Full Marks
+Meets style guidelines
+0 pts
+Point Deduction
+0 / 0 pts
+Code Style Deduction: For each file without required comment headers. (Including inaccurate descriptions.) (-1 Point)
+0 pts
+Full Marks
+Meets style guidelines
+0 pts
+Point Deduction
+0 / 0 pts
+Un-covered Material: Used materials not yet covered in the class. (-3 Points)
+0 pts
+Full Marks
+Used only approved materials
+0 pts
+Point Deduction
+Used un-covered materials
+0 / 0 pts
+Code Style Deduction: For each function without a required docstring. (Including inaccurate descriptions.) (-1 Point)
+0 pts
+Full Marks
+Meets style guidelines
+0 pts
+Point Deduction
+0 / 0 pts
+DEDUCTION: Class uses non-private members for board or current state. (-2 Points)
+0 pts
+Full Marks
+0 pts
+Point Deduction
+0 / 0 pts
+DEDUCTION: Class has structural problems causing it to not function properly. (-6 Points)
+0 pts
+Full Marks
+0 pts
+Point Deduction
+0 / 0 pts
+LATE Project Deduction (within 48 hours)
+0 pts
+Full Marks
+0 pts
+Point Deduction
+0 / 0 pts
+DEDUCTION: Typos/incorrect formatting (Including extraneous/incorrect print statements). (-6 Points)
+0 pts
+Full Marks
+0 pts
+Point Deduction
+0 / 0 pts
+Correctly used an init method initialize some data structure to keep track of numbers chosen, whose turn it is, and sets current_state to “UNFINISHED”.
+8 to >7 pts
+Full Marks
+7 to >0 pts
+Partial Credit
+0 pts
+No Marks
+8 / 8 pts
+Created getter method for current_state data member that return the state.
+5 pts
+Full Marks
+0 pts
+No Marks
+5 / 5 pts
+make_move method has correct parameters for player and number selected.
+5 pts
+Full Marks
+0 pts
+No Marks
+5 / 5 pts
+make_move method correctly assesses whether the correct player is making a move.
+5 pts
+Full Marks
+0 pts
+No Marks
+5 / 5 pts
+make_move method correctly determines if number is available to choose.
+6 to >5 pts
+Full Marks
+5 to >0 pts
+Partial Credit
+0 pts
+No Marks
+6 / 6 pts
+make_move method correctly determines if game has already been won or is still in progress.
+5 pts
+Full Marks
+0 pts
+No Marks
+5 / 5 pts
+make_move method correctly updates data structure to eliminate available numbers.
+6 to >5 pts
+Full Marks
+5 to >0 pts
+Partial Credit
+0 pts
+No Marks
+6 / 6 pts
+make_move method correctly updates which player has the next turn.
+5 pts
+Full Marks
+0 pts
+No Marks
+5 / 5 pts
+make_move method correctly returns true or false based on if the move attempted was successful.
+5 pts
+Full Marks
+0 pts
+No Marks
+5 / 5 pts
+make_move method correctly changes the status of the game if first or second wins.
+5 pts
+Full Marks
+0 pts
+No Marks
+Comments
+You detect a win, but the logic to find it is in the get_current_state method, so it will not update the state unless that method is called. So a win could occur, but the state wouldn't change until later and the game wouldn't end. The tests for a win/draw should be inside of make_move instead, so it runs immediately after every turn.
+2 / 5 pts
+make_move method correctly changes the status of the game if it is a draw.
+5 pts
+Full Marks
+0 pts
+No Marks
+Comments
+You detect a draw, but the logic to find the draw is in the get_current_state method, so it will not update the state unless that method is called. So a draw could occur, but the state wouldn't change until later and the game wouldn't end. The tests for a win/draw should be inside of make_move instead, so it runs immediately after every turn.
+3 / 5 pts
+Total Points: 55
+
